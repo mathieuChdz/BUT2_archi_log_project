@@ -1,0 +1,18 @@
+body{
+    background-color: aqua;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    padding: 20px;
+    border-bottom: 2px solid #6b7d7dff;
+}
+
+.navBar a {
+    color: black;
+}

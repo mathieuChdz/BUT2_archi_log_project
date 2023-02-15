@@ -9,7 +9,8 @@ from datetime import datetime
 from typing import Optional
 
 
-TODO_FOLDER = os.path.join("sqlite:///Z:\\archi_log\\toudou_starter_models\\toudou\\db\\", "todos.db")
+TODO_FOLDER = os.path.join("sqlite:///Z:\\archi_log\\toudou_starter_models\\projet_archi_log\\toudou\\db\\", "todos.db")
+
 
 
 @dataclass

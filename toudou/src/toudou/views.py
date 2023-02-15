@@ -6,6 +6,19 @@ from datetime import datetime
 import toudou.models as models
 import toudou.services as services
 
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home(name=None):
+    return render_template('home.html', name=name)
+
+@app.route('/create')
+def create(name=None):
+    return render_template('create.html', name=name)
+
+
 
 @click.group()
 def cli():

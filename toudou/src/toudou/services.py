@@ -6,6 +6,8 @@ from datetime import datetime
 
 from toudou.models import *
 
+from toudou.models import Todo, get_todos
+
 
 def export_to_csv() -> str:
     output = io.StringIO()
