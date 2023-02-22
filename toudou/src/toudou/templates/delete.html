@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete task</title>
+</head>
+<body>
+<div class="form-delete">
+    <form action="{{ url_for('delete_task')}}" method="post">
+        <h2>Supprimer une tache :</h2>
+        ID : <input type="number" id="id" name="id" placeholder="id" required>
+        <br><br>
+        <input type="submit" id="valider" name="valider" value="valider">
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,7 +1,3 @@
-body{
-    background-color: aqua;
-}
-
 .navBar {
     display: flex;
     align-items: center;
@@ -13,6 +9,7 @@ body{
     border-bottom: 2px solid #6b7d7dff;
 }
 
-.navBar a {
+.navBar-a a{
     color: black;
+    margin-left: 5em;
 }

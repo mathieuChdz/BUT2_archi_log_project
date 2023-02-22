@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get all</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Tache</th>
+        <th>Complété</th>
+        <th>Date</th>
+    </tr>
+    {% for data in resultat %}
+    <tr>
+        <td>{{data[0]}}</td>
+        <td>{{data[1]}}</td>
+        <td>{{data[2]}}</td>
+        <td>{{data[3]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>

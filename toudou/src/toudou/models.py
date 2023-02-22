@@ -62,13 +62,13 @@ def modify_task(id: int, task: str) -> None:
 
 def get_todos() -> list[Todo]:
     stmt = select(todo_table)
-
+    tab_todos=[]
     with engine.connect() as conn:
 
         for row in conn.execute(stmt):
-
+            tab_todos.append(row)
             print(row)
-
+    return tab_todos
 
 def update_todo(id: int) -> None:
 

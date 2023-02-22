@@ -9,14 +9,19 @@
 
 <div class="navBar">
     <nav>
-        <a href="/create">create todo</a>
-        <a href="/delete">delete todo</a>
-        <a href="/update">update todo</a>
-        <a href="/get_all">get_all todo</a>
-        <a href="/modify">modify todo</a>
+        <div class="navBar-a">
+            <a href="/create">create todo</a>
+            <a href="/delete">delete todo</a>
+            <a href="/update">update todo</a>
+            <a href="{{ url_for('get_all')}}">get_all todo</a>
+            <a href="/modify">modify todo</a>
+        </div>
     </nav>
 </div>
 
+{% if data %}
+<h1>{{data}}</h1>
+{% endif %}
 
 <!--<form>-->
 <!--    <input type="submit" id="create" name="create" value="create task">-->

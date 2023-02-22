@@ -6,7 +6,7 @@ from datetime import datetime
 import toudou.models as models
 import toudou.services as services
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -18,7 +18,29 @@ def home(name=None):
 def create(name=None):
     return render_template('create.html', name=name)
 
+@app.route('/delete')
+def delete(name=None):
+    return render_template('delete.html', name=name)
 
+@app.post('/deletetask')
+def delete_task(name=None):
+    id = request.form['id']
+    models.delete_todo(id)
+    return render_template('home.html', name=name)
+
+@app.post('/createtask')
+def create_task(name=None):
+    print(request.form)
+    id = request.form['id']
+    task = request.form['tache']
+    date = request.form['date']
+    models.create_todo(id, task)
+    return render_template('home.html', name=name, data="ok")
+
+@app.route('/getall')
+def get_all(name=None):
+    resutat = models.get_todos()
+    return render_template('get_all.html', name=name, resultat=resutat)
 
 @click.group()
 def cli():

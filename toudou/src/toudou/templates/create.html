@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/charte_create.css">
     <title>create todo</title>
 </head>
 <body>
-<h1>dkskdlq</h1>
+<div class="form-create">
+    <form action="{{ url_for('create_task')}}" method="post">
+        <h2>Créer votre tache :</h2>
+        ID : <input type="number" id="id" name="id" placeholder="id" required>
+        <br><br>
+        Tache : <input type="text" id="tache" name="tache" placeholder="Votre tache" required>
+        <br><br>
+        Date : <input type="date" id="date" name="date" placeholder="Votre date">
+                <br><br>
+        <input type="submit" id="valider" name="valider" value="valider">
+    </form>
+</div>
 
 </body>
 </html>
