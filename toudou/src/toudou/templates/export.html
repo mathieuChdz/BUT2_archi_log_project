@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>export todos</title>
+
+    <link rel="stylesheet" href="../static/charte_export.css">
+    <link rel="stylesheet" href="../static/charte-navbar.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body>
+
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper">
+    <ul>
+        <a href="/"><h1>TO-DO LIST</h1></a>
+        <li><a href="/create">Créer une tâche</a></li>
+        <li><a href="/delete">Supprimer une tâche</a></li>
+        <li><a href="{{ url_for('update_task')}}">Mettre à jour une tâche</a></li>
+        <li><a href="{{ url_for('get_task')}}">Chercher une tâche</a></li>
+        <li><a href="{{ url_for('get_all')}}">Afficher les tâches</a></li>
+        <li><a href="/modify">Modifier une tâche</a></li>
+        <li><a href="/export">Exporter des tâches</a></li>
+        <li><a href="/import">Importer des tâches</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1> Votre fichier csv à bien été exporté</h1>
+    <h3> Ce fichier se trouve dans le répertoire racine (toudou) de votre projet</h3>
+</div>
+
+</body>
+</html>

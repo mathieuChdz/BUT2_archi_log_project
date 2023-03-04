@@ -7,10 +7,10 @@ from sqlalchemy import *
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
+from datetime import datetime
 
 
-TODO_FOLDER = os.path.join("sqlite:///Z:\\archi_log\\toudou_starter_models\\projet_archi_log\\toudou\\db\\", "todos.db")
-
+TODO_FOLDER = os.path.join("sqlite:///C:\\Users\\Chedozeau\\Documents\\BUT2\\archi log\\projet_archi_log\\toudou\\db\\", "todos.db")
 
 
 @dataclass
@@ -34,7 +34,7 @@ todo_table = Table(
 def init_db() -> None:
     metadata_obj.create_all(engine)
 
-def create_todo(id : int, task: str, complete: bool = False, due: Optional[datetime] = None,) -> None:
+def create_todo(id : int, task: str, complete: bool = False, due: Optional[datetime] = None) -> None:
 
     stmt = insert(todo_table).values(id=id, task=task, complete=complete, due=due)
 
@@ -45,12 +45,13 @@ def create_todo(id : int, task: str, complete: bool = False, due: Optional[datet
 
 def get_todo(id: int) -> Todo:
     stmt = select(todo_table).where(todo_table.c.id == id)
-
+    tab_todo = []
     with engine.connect() as conn:
 
         for row in conn.execute(stmt):
-
+            tab_todo.append(row)
             print(row)
+    return tab_todo
 
 def modify_task(id: int, task: str) -> None:
 
@@ -70,9 +71,9 @@ def get_todos() -> list[Todo]:
             print(row)
     return tab_todos
 
-def update_todo(id: int) -> None:
+def update_todo(id: int, status: bool) -> None:
 
-    stmt = (update(todo_table).where(todo_table.c.id == id).values(complete=True))
+    stmt = (update(todo_table).where(todo_table.c.id == id).values(complete=status))
 
     with engine.connect() as conn:
         result = conn.execute(stmt)

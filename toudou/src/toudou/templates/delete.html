@@ -2,16 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/charte_delete.css">
+    <link rel="stylesheet" href="../static/charte-navbar.css">
     <title>delete task</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
 </head>
 <body>
+
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper">
+    <ul>
+        <a href="/"><h1>TO-DO LIST</h1></a>
+        <li><a href="/create">Créer une tâche</a></li>
+        <li><a href="/delete">Supprimer une tâche</a></li>
+        <li><a href="{{ url_for('update_task')}}">Mettre à jour une tâche</a></li>
+        <li><a href="{{ url_for('get_task')}}">Chercher une tâche</a></li>
+        <li><a href="{{ url_for('get_all')}}">Afficher les tâches</a></li>
+        <li><a href="/modify">Modifier une tâche</a></li>
+        <li><a href="/export">Exporter des tâches</a></li>
+        <li><a href="/import">Importer des tâches</a></li>
+    </ul>
+</div>
+
 <div class="form-delete">
-    <form action="{{ url_for('delete_task')}}" method="post">
-        <h2>Supprimer une tache :</h2>
-        ID : <input type="number" id="id" name="id" placeholder="id" required>
-        <br><br>
-        <input type="submit" id="valider" name="valider" value="valider">
-    </form>
+    <div class="form-delete-structure">
+        <form action="{{ url_for('delete_task')}}" method="post">
+
+            {% if data %}
+                <h3 class="task-ok">{{data}}</h3>
+            {% endif %}
+
+            <h2>Supprimer une tache :</h2>
+            <input type="number" id="id" name="id" placeholder="id" required>
+            <br><br>
+            <input type="submit" id="valider" name="valider" value="valider">
+        </form>
+    </div>
 </div>
 
 </body>

@@ -1,0 +1,97 @@
+html {
+    background: url("../static/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: gradient 40s ease infinite;
+    height: 100vh;
+	font-family: sans-serif;
+    color: white;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.form-upload-structure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7em;
+}
+
+.form-upload form{
+    text-align: center;
+    padding: 2em;
+    border-radius: 10%;
+}
+
+.form-upload input[type="file"]{
+    color: rgba(255, 255, 255, 0.7);
+    /*border: none;*/
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0.7rem 1.5rem;
+    border-radius: 100px;
+    width: 100%;
+    border: solid 1px #e17d04;
+}
+
+::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-upload input[type="submit"]{
+    border: solid 1px #e17d04;
+    outline: none;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 50%;
+}
+
+.form-upload h2{
+    margin-bottom: 1em;
+    border-bottom: solid 1px #e17d04;
+}
+
+.task-ok{
+    color: #27AE60;
+}
+
+.precisions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.precisions *{
+    margin-bottom: 1em;
+}
+
+.precisions h2{
+    border-bottom: solid 1px #e17d04;
+}
+
+.precisions img{
+    border: solid 2px #e17d04;
+}
+
+.precisions p{
+    color: #e17d04;
+}

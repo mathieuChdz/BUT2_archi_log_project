@@ -1,33 +1,33 @@
 import csv
 import dataclasses
 import io
-
+import shutil
 from datetime import datetime
 
 from toudou.models import *
 
 from toudou.models import Todo, get_todos
 
+def export_to_csv() -> bool:
 
-def export_to_csv() -> str:
-    output = io.StringIO()
-    csv_writer = csv.DictWriter(
-        output,
-        fieldnames=[f.name for f in dataclasses.fields(Todo)]
-    )
-    for todo in get_todos():
-        csv_writer.writerow(dataclasses.asdict(todo))
-    return output.getvalue
+    with open('todos.csv', 'w') as file:
+        writer = csv.writer(file, delimiter=',')
+        for todo in get_todos():
+            writer.writerow(todo)
+    return True
 
 def import_from_csv(data: str) -> None:
     with io.StringIO(data) as csvfile:
-        csv_reader = csv.DictReader(
-            csvfile,
-            fieldnames=[f.name for f in dataclasses.fields(Todo)]
-        )
+        csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            create_todo(
-                task=row["task"],
-                due=datetime.fromisoformat(row["due"]) if row["due"] else None,
-                complete=bool(row["complete"])
-            )
+
+            print(row)
+            print(row[0])
+
+            create_todo(int(row[0]), row[1])
+
+            # create_todo(
+            #     task=row["task"],
+            #     due=datetime.fromisoformat(row["due"]) if row["due"] else None,
+            #     complete=bool(row["complete"])
+            # )

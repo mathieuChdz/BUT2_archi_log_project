@@ -1,15 +1,85 @@
-.navBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
-    padding: 20px;
-    border-bottom: 2px solid #6b7d7dff;
+html {
+    background: url("../static/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: gradient 40s ease infinite;
+    height: 100vh;
+	font-family: sans-serif;
 }
 
-.navBar-a a{
-    color: black;
-    margin-left: 5em;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.form-connexion{
+	text-align: center;
+	margin-top: 7em;
+	display: flex;
+	justify-content: center;
+}
+
+.form-inscription{
+	text-align: center;
+	margin-top: 7em;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+.content .title{
+  font-size: 40px;
+  font-weight: 700;
+}
+.content p{
+    font-size: 35px;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

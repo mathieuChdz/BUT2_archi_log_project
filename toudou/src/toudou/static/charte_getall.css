@@ -1,0 +1,50 @@
+html {
+    background: url("../static/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: gradient 25s ease infinite;
+    height: 100vh;
+	font-family: sans-serif;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.table-task{
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    border-collapse: collapse ;
+    width: 75%;
+}
+
+td, th{
+    border-collapse: collapse ;
+    padding: 10px;
+    border: solid 1px #e17d04;
+    text-align: center;
+}
+
+tr{
+    background-color: #faeee2;
+}
+
+.tr-title{
+    background-color: #e5984c;
+}
+
+

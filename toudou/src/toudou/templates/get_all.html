@@ -2,26 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/charte_getall.css">
+    <link rel="stylesheet" href="../static/charte-navbar.css">
     <title>get all</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </head>
 <body>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Tache</th>
-        <th>Complété</th>
-        <th>Date</th>
-    </tr>
-    {% for data in resultat %}
-    <tr>
-        <td>{{data[0]}}</td>
-        <td>{{data[1]}}</td>
-        <td>{{data[2]}}</td>
-        <td>{{data[3]}}</td>
-    </tr>
-    {% endfor %}
-</table>
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper">
+    <ul>
+        <a href="/"><h1>TO-DO LIST</h1></a>
+        <li><a href="/create">Créer une tâche</a></li>
+        <li><a href="/delete">Supprimer une tâche</a></li>
+        <li><a href="{{ url_for('update_task')}}">Mettre à jour une tâche</a></li>
+        <li><a href="{{ url_for('get_task')}}">Chercher une tâche</a></li>
+        <li><a href="{{ url_for('get_all')}}">Afficher les tâches</a></li>
+        <li><a href="/modify">Modifier une tâche</a></li>
+        <li><a href="/export">Exporter des tâches</a></li>
+        <li><a href="/import">Importer des tâches</a></li>
+    </ul>
+</div>
+
+<div class="table-task">
+    <table>
+        <tr class="tr-title">
+            <th>ID</th>
+            <th>Tache</th>
+            <th>Complété</th>
+            <th>Date</th>
+        </tr>
+        {% for data in resultat %}
+        <tr>
+            <td>{{data[0]}}</td>
+            <td>{{data[1]}}</td>
+            {% if data[2] == False %}
+                <td class="task-ok">non</td>
+            {% else %}
+                <td class="task-ok">oui</td>
+            {% endif %}
+            <td>{{data[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
 
 
 </body>

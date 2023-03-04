@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/charte.css">
-    <title>Hello from Flask</title>
+    <link rel="stylesheet" href="../static/charte-navbar.css">
+    <title>Accueil TODO LIST</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </head>
 <body>
 
-<div class="navBar">
-    <nav>
-        <div class="navBar-a">
-            <a href="/create">create todo</a>
-            <a href="/delete">delete todo</a>
-            <a href="/update">update todo</a>
-            <a href="{{ url_for('get_all')}}">get_all todo</a>
-            <a href="/modify">modify todo</a>
-        </div>
-    </nav>
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper">
+    <ul>
+        <a href="/"><h1>TO-DO LIST</h1></a>
+        <li><a href="/create">Créer une tâche</a></li>
+        <li><a href="/delete">Supprimer une tâche</a></li>
+        <li><a href="{{ url_for('update_task')}}">Mettre à jour une tâche</a></li>
+        <li><a href="{{ url_for('get_task')}}">Chercher une tâche</a></li>
+        <li><a href="{{ url_for('get_all')}}">Afficher les tâches</a></li>
+        <li><a href="/modify">Modifier une tâche</a></li>
+        <li><a href="/export">Exporter des tâches</a></li>
+        <li><a href="/import">Importer des tâches</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="title">Bienvenue sur ce fabuleux site</div>
+    <p>Ta TO-DO LIST t'attend</p>
 </div>
 
-{% if data %}
-<h1>{{data}}</h1>
-{% endif %}
-
-<!--<form>-->
-<!--    <input type="submit" id="create" name="create" value="create task">-->
-<!--    <input type="submit" id="delete" name="delete" value="delete task">-->
-<!--    <input type="submit" id="update" name="update" value="update task">-->
-<!--    <input type="submit" id="modify" name="modify" value="modify task">-->
-<!--    <input type="submit" id="get-all" name="get-all" value="get all tasks">-->
-<!--</form>-->
 
 </body>
+
+
 </html>
